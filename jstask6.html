@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        .login-container h2 {
+            font-family: 'Courier New', Courier, monospace;
+            font-style: italic;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 15px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            padding-left: 35px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .login-btn {
+            background-color: #0095f6;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-btn:hover {
+            background-color: #007acc;
+        }
+        .options {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        .options a {
+            text-decoration: none;
+            color: #0095f6;
+        }
+        .signup {
+            font-size: 12px;
+            margin-top: 15px;
+        }
+        .signup a {
+            color: #0095f6;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Instagram</h2>
+        <div class="input-group">
+            <i>👤</i>
+            <input type="text" placeholder="Username">
+        </div>
+        <div class="input-group">
+            <i>🔒</i>
+            <input type="password" placeholder="Password">
+        </div>
+        <button class="login-btn">Log in</button>
+        <div class="options">
+            <label><input type="checkbox"> Remember me</label>
+            <a href="#">Forgot Password?</a>
+        </div>
+        <div class="signup">Don't have an account? <a href="#">Sign up here.</a></div>
+    </div>
+</body>
+</html>

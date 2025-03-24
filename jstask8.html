@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .error {
+            color: red;
+        }
+        button {
+            background: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form id="regForm" onsubmit="return validateForm()">
+        <label>First Name:</label>
+        <input type="text" id="firstName">
+        <span class="error" id="firstNameError"></span><br>
+
+        <label>Last Name:</label>
+        <input type="text" id="lastName">
+        <span class="error" id="lastNameError"></span><br>
+
+        <label>Email:</label>
+        <input type="email" id="email">
+        <span class="error" id="emailError"></span><br>
+
+        <label>Password:</label>
+        <input type="password" id="password">
+        <span class="error" id="passwordError"></span><br>
+
+        <label>Re-enter Password:</label>
+        <input type="password" id="confirmPassword">
+        <span class="error" id="confirmPasswordError"></span><br>
+
+        <button type="submit">REGISTER</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            let isValid = true;
+            
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            
+            document.getElementById("firstNameError").innerText = firstName ? "" : "This field is required";
+            document.getElementById("lastNameError").innerText = lastName ? "" : "This field is required";
+            document.getElementById("emailError").innerText = email.includes("@")==false ? "A valid email address is required" : "";
+            document.getElementById("passwordError").innerText = password ? "" : "This field is required";
+            document.getElementById("confirmPasswordError").innerText = (confirmPassword && password === confirmPassword) ? "" : "POOR OR MISMATCH";
+            
+            return isValid;
+        }
+    </script>
+</body>
+</html>
